@@ -8,6 +8,7 @@ public class EnemyDownAppApplication {
 
   public static void main(String[] args) {
     SpringApplication.run(EnemyDownAppApplication.class, args);
+    
   }
 
 }
