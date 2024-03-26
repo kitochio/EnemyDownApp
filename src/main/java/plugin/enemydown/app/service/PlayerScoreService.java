@@ -2,9 +2,12 @@ package plugin.enemydown.app.service;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
+import plugin.enemydown.app.mapper.PlayerScoreMapper;
 import plugin.enemydown.app.mapper.data.PlayerScore;
-import plugin.enemydown.app.mapper.data.PlayerScoreMapper;
 
+/**
+ * プレイヤーのスコアデータを取得するクラスです
+ */
 @Service
 public class PlayerScoreService {
 

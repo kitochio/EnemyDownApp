@@ -6,6 +6,9 @@ import plugin.enemydown.app.mapper.GameConfigMapper;
 import plugin.enemydown.app.mapper.data.GameConfig;
 import plugin.enemydown.app.mapper.data.SpawnEnemy;
 
+/**
+ * Configのデータを取得するクラスです
+ */
 @Service
 public class ConfigService {
 
@@ -25,5 +28,15 @@ public class ConfigService {
 
   public List<SpawnEnemy> searchSpawnEnemyList(String difficulty) {
     return mapper.selectCSpawnEnemyList(difficulty);
+  }
+
+  public GameConfig registerConfig(GameConfig config) {
+    mapper.insertConfig(config);
+    return mapper.selectConfig(config.getDifficulty());
+  }
+
+  public List<SpawnEnemy> updateEnemyScore(SpawnEnemy enemy) {
+    mapper.updateEnemyScore(enemy);
+    return mapper.selectCSpawnEnemyList(enemy.getDifficulty());
   }
 }

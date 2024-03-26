@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 import plugin.enemydown.app.mapper.data.PlayerScore;
 import plugin.enemydown.app.service.PlayerScoreService;
 
+/**
+ * プレイヤースコアのデータを返すクラスです
+ */
 @RestController
 public class PlayerScoreController {
 
