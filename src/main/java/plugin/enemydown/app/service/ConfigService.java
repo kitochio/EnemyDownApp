@@ -30,7 +30,10 @@ public class ConfigService {
     return mapper.selectCSpawnEnemyList(difficulty);
   }
 
-  public GameConfig registerConfig(GameConfig config) {
+  public GameConfig registerConfig(GameConfig config) throws Exception {
+    if (searchConfig(config.getDifficulty()) != null) {
+      throw new DuplicateConfigException("Duplicate config Error!");
+    }
     mapper.insertConfig(config);
     return mapper.selectConfig(config.getDifficulty());
   }
